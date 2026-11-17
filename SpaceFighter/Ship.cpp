@@ -1,7 +1,7 @@
 
 #include "Ship.h"
 #include "Level.h"
-
+#include <iostream>
 
 Ship::Ship()
 {
@@ -30,6 +30,7 @@ void Ship::Hit(const float damage)
 
 	GameObject::Deactivate();
 	GetCurrentLevel()->SpawnExplosion(this);
+	std::cout << "Ship Destroyed!!!\n";
 }
 
 IAttachment* Ship::GetAttachment(const std::string& key)
